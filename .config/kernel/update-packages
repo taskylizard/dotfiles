@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd home/taskylizard/.config/kernel/packages; ls | xargs -P10 -I{} git -C {} pull; notify-send "Kernel packages updated, restart."; 
