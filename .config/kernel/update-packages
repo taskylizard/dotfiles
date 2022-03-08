@@ -1,3 +1,4 @@
 #!/bin/bash
 
+
 cd ~/.config/kernel/packages; ls | xargs -P10 -I{} git -C {} pull && pnpm i; notify-send "Kernel packages updated, restart."
