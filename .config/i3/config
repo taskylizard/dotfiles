@@ -23,7 +23,7 @@ exec --no-startup-id hsetroot -fill ~/Documents/wallhaven-13mk9v.jpg
 exec --no-startup-id xsettingsd &
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec_always --no-startup-id autotiling &
+exec_always --no-startup-id autotiling
 
 # --> Custom Window Settings
 for_window [class="^.*"] border pixel 0
@@ -55,7 +55,7 @@ bindsym $mod+Shift+x restart
 
 ## Main // Logout // <Super> + Shift + e ##
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
 # --> Basic stuff
 
 ## General // Terminal // <Super> + Enter ##
@@ -74,6 +74,7 @@ bindsym Print exec flameshot gui
 # --> dmenu stuff with rofi
 bindsym $mod+shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
 bindsym $mod+d exec rofi -show drun -sidebar-mode -font 'Ubuntu Nerd Font Mono Complete 10'
+bindsym $mod+shift+a exec ~/bin/i3-keybinds 
 
 # --> Movement stuff
 # change focus
@@ -165,7 +166,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # --> resize window (you can also use the mouse for that)
-mode "resize" {
+mode "  " {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -183,7 +184,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "  "
 
 # ==> Start i3bar to display a workspace bar (i3status)
 bar {
