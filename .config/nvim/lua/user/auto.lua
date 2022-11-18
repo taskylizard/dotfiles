@@ -23,7 +23,7 @@ cmd [[
   augroup end
   
   augroup _auto_resize
-    autocmd!
+   autocmd!
     autocmd VimResized * tabdo wincmd =
   augroup end
   

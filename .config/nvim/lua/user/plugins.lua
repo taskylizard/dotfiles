@@ -69,7 +69,7 @@ return packer.startup(function(use)
 
   use {'neoclide/coc.nvim', branch = 'release'}
   use 'honza/vim-snippets'
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
   -- Usefull Stuff
   -- ediorconfig file
   use 'editorconfig/editorconfig-vim'
@@ -93,7 +93,6 @@ return packer.startup(function(use)
       config = function() require'nvim-rooter'.setup() end
   }
 
-  -- Persistence owo
   use({
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -113,7 +112,7 @@ return packer.startup(function(use)
   use 'wfxr/minimap.vim'
 
   -- Autosave
-  use "Pocco81/AutoSave.nvim"
+  -- use "Pocco81/AutoSave.nvim"
 
   -- For Markdown
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}

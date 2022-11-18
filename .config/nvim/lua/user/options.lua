@@ -53,7 +53,7 @@ g.tokyonight_italic_functions = true
 g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 g.tokyonight_hide_inactive_statusline = true
 
-cmd("colorscheme tokyonight")
+cmd("colorscheme tokyonight-night")
 cmd "set whichwrap+=<,>,[,],h,l"
 cmd [[set iskeyword+=-]]
 cmd [[set formatoptions-=cro]] 
