@@ -48,24 +48,8 @@ return {
       --   return true
       -- end
     },
-    -- enable servers that you already have installed without mason
-    servers = {
-      "unocss",
-      -- "pyright"
-    },
-
+    servers = {},
     config = {
-      ["unocss"] = {
-        filetypes = {
-          "astro",
-          "html",
-          "typescriptreact",
-        },
-        on_new_config = function(new_config) end,
-        root_dir = function(fname)
-          return require("lspconfig.util").root_pattern("unocss.config.js", "unocss.config.ts")(fname)
-        end,
-      },
       tsserver = {
         settings = {
           typescript = {
