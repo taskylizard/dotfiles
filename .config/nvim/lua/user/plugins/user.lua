@@ -1,5 +1,5 @@
 return {
-  { "HiPhish/nvim-ts-rainbow2" },
+  { "p00f/nvim-ts-rainbow", event = "VeryLazy" },
   {
     "vuki656/package-info.nvim",
     requires = "MunifTanjim/nui.nvim",
@@ -21,7 +21,6 @@ return {
   -- { import = opts = { ensure_installed = {"prettierd"} }"astrocommunity.pack.typescript", opts = { ensure_installed = {"prettierd"} }},
   -- { "pack.typescript", opts = { ensure_installed = {"prettierd"} } },
   { "mfussenegger/nvim-dap", enabled = false },
-
   {
     "folke/tokyonight.nvim",
     opts = {
@@ -42,4 +41,11 @@ return {
   { "ray-x/lsp_signature.nvim", event = "BufRead" },
   { "nathom/easy-replace.nvim" },
   { "kvrohit/substrata.nvim" },
+  -- {
+  --   "lvauthrin/chatgpt.nvim",
+  --   lazy = false,
+  --   config = function(_, _)
+  --     require("chatgpt").setup({ api_key = os.getenv("OPENAI_API_KEY") })
+  --   end,
+  -- },
 }
