@@ -1,5 +1,4 @@
 return {
-  -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },

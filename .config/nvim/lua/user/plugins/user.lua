@@ -18,13 +18,11 @@ return {
     },
     opts = function() return { server = require("astronvim.utils.lsp").config "tsserver" } end,
   },
-  -- { import = opts = { ensure_installed = {"prettierd"} }"astrocommunity.pack.typescript", opts = { ensure_installed = {"prettierd"} }},
-  -- { "pack.typescript", opts = { ensure_installed = {"prettierd"} } },
   { "mfussenegger/nvim-dap", enabled = false },
   {
     "folke/tokyonight.nvim",
     opts = {
-      sidebars = { "qf", "vista_kind", "terminal", "packer" },
+      sidebars = { "qf", "vista_kind", "terminal" },
     },
   },
   {
@@ -41,11 +39,15 @@ return {
   { "ray-x/lsp_signature.nvim", event = "BufRead" },
   { "nathom/easy-replace.nvim" },
   { "kvrohit/substrata.nvim" },
-  -- {
-  --   "lvauthrin/chatgpt.nvim",
-  --   lazy = false,
-  --   config = function(_, _)
-  --     require("chatgpt").setup({ api_key = os.getenv("OPENAI_API_KEY") })
-  --   end,
-  -- },
+  {
+    "marilari88/twoslash-queries.nvim",
+    event = "BufRead",
+    ft = { "typescript", "typescriptreact" },
+    opts = { mult_line = true },
+  },
+  {
+   "lvauthrin/chatgpt.nvim",
+   cmd = {"ChatGPT"},
+    opts = { api_key = os.getenv("OPENAI_API_KEY") }
+  },
 }
