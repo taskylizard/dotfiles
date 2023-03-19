@@ -2,9 +2,68 @@ return {
   { "p00f/nvim-ts-rainbow", event = "VeryLazy" },
   {
     "vuki656/package-info.nvim",
-    requires = "MunifTanjim/nui.nvim",
-    config = true,
+    dependencies = "MunifTanjim/nui.nvim",
+    opts = { package_manager = "pnpm" },
     event = "BufRead package.json",
+    config = function(_, opts)
+      local h = require "package-info"
+      h.setup(opts)
+      -- Show dependency versions
+      vim.keymap.set(
+        { "n" },
+        "<LEADER>ns",
+        h.show,
+        { silent = true, noremap = true, desc = "Show dependency versions" }
+      )
+
+      -- Hide dependency versions
+      vim.keymap.set(
+        { "n" },
+        "<LEADER>nc",
+        h.hide,
+        { silent = true, noremap = true, desc = "Hide dependency versions" }
+      )
+
+      -- Toggle dependency versions
+      vim.keymap.set(
+        { "n" },
+        "<LEADER>nt",
+        h.toggle,
+        { silent = true, noremap = true, desc = "Toggle dependency versions" }
+      )
+
+      -- Update dependency on the line
+      vim.keymap.set(
+        { "n" },
+        "<LEADER>nu",
+        h.update,
+        { silent = true, noremap = true, desc = "Update dependency on the line" }
+      )
+
+      -- Delete dependency on the line
+      vim.keymap.set(
+        { "n" },
+        "<LEADER>nd",
+        h.delete,
+        { silent = true, noremap = true, desc = "Delete dependency on the line" }
+      )
+
+      -- Install a new dependency
+      vim.keymap.set(
+        { "n" },
+        "<LEADER>ni",
+        h.install,
+        { silent = true, noremap = true, desc = "Install a new dependency" }
+      )
+
+      -- Install a different dependency version
+      vim.keymap.set(
+        { "n" },
+        "<LEADER>np",
+        h.change_version,
+        { silent = true, noremap = true, desc = "Install a different dependency version" }
+      )
+    end,
   },
   {
     "jose-elias-alvarez/typescript.nvim",
@@ -46,8 +105,9 @@ return {
     opts = { mult_line = true },
   },
   {
-   "lvauthrin/chatgpt.nvim",
-   cmd = {"ChatGPT"},
-    opts = { api_key = os.getenv("OPENAI_API_KEY") }
+    "lvauthrin/chatgpt.nvim",
+    cmd = { "ChatGPT" },
+    opts = { api_key = os.getenv "OPENAI_API_KEY" },
   },
+  { "folke/drop.nvim", event = "BufRead" },
 }

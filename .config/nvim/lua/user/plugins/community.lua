@@ -6,4 +6,5 @@ return {
   { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },
+  { import = "astrocommunity.syntax.hlargs-nvim" },
 }
