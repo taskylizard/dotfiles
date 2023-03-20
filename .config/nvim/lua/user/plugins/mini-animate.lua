@@ -33,5 +33,4 @@ return {
   --     }
   --   end,
   -- },
-  { "gen740/SmoothCursor.nvim", lazy = false },
 }

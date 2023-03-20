@@ -77,11 +77,10 @@ return {
     },
     opts = function() return { server = require("astronvim.utils.lsp").config "tsserver" } end,
   },
-  { "mfussenegger/nvim-dap", enabled = false },
   {
     "folke/tokyonight.nvim",
     opts = {
-      sidebars = { "qf", "vista_kind", "terminal" },
+      sidebars = { "qf", "vista_kind", "terminal", "neotree" },
     },
   },
   {
@@ -109,5 +108,5 @@ return {
     cmd = { "ChatGPT" },
     opts = { api_key = os.getenv "OPENAI_API_KEY" },
   },
-  { "folke/drop.nvim", event = "BufRead" },
+  { "folke/drop.nvim", event = "VeryLazy" },
 }
