@@ -92,7 +92,7 @@ return {
     },
   },
   { "npxbr/glow.nvim", ft = { "markdown" } },
-  { "andweeb/presence.nvim", event = "VeryLazy", opts = { client_id = "1009122352916857003" } },
+  { "andweeb/presence.nvim", event = "VeryLazy" },
   { "folke/todo-comments.nvim", event = "BufRead" },
   { "ray-x/lsp_signature.nvim", event = "BufRead" },
   { "nathom/easy-replace.nvim" },
