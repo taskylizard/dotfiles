@@ -33,21 +33,12 @@ unset key
 # now we make our install cooler
 autoload -Uz promptinit
 promptinit
-
-user=$(whoami)
+eval "$(starship init zsh)"
 
 SPACESHIP_CHAR_SYMBOL="λ "
-SPACESHIP_BATTERY_SHOW="false"
-SPACESHIP_USER_SHOW="always"
-SPACESHIP_USER_PREFIX="" # remove `with` before username
-SPACESHIP_USER_SUFFIX="" # remove space before host
 SPACESHIP_USER_COLOR="#00d7ff"
 SPACESHIP_HOST_COLOR="#ff87df"
-SPACESHIP_HOST_SHOW="never"
-SPACESHIP_HOST_PREFIX="@:"
-SPACESHIP_HOST_SUFFIX=""
 SPACESHIP_DIR_COLOR="#ffafff"
-SPACESHIP_PROMPT_ASYNC=false # my god it looks like shit?
 
 SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section

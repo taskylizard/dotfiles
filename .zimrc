@@ -9,7 +9,6 @@ zmodule fzf
 # Prompt
 zmodule duration-info
 zmodule git-info
-zmodule spaceship-prompt/spaceship-prompt --name spaceship
 
 # Completion
 zmodule zsh-users/zsh-completions --fpath src
