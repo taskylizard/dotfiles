@@ -1,0 +1,14 @@
+#! /usr/bin/env sh
+# GOES SOMEWHERE IN PATH
+case $(file -bL --mime-type "$1") in
+cannot\ open*) exit ;;
+inode/directory) ls --color=always "$1" ;;
+text/html) w3m -O UTF-8 -dump "$1" ;;
+text/troff) man ./"$1" ;;
+application/gzip | application/x-tar | application/zip | application/x-7z-compressed | application/vnd.rar | application/x-bzip*) bsdtar --list --file "$1" ;;
+application/json) jq --color-output . "$1" ;;
+audio/* | image/* | application/octet-stream) mediainfo "$1" || exit 1 ;;
+*opendocument*) odt2txt "$1" ;;
+application/pgp-encrypted) gpg -d -- "$1" ;;
+text/* | */xml) batcat --style="plain" --color=always "$1" ;;
+esac

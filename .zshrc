@@ -61,6 +61,14 @@ if [[ -n $SSH_CONNECTION ]]; then
 
 fi
 
+function finstall {
+  PACKAGE_NAME=$(apt-cache search $1 | fzf | cut --delimiter=" " --fields=1)
+  if [ "$PACKAGE_NAME" ]; then
+    echo "Installing $PACKAGE_NAME"
+    sudo apt install $PACKAGE_NAME
+    fi
+}
+alias finstall=finstall
 alias zconf="nvim ~/.zshrc"
 export PATH=$PATH:$HOME/.local/bin
 export PATH=~/bin:$PATH

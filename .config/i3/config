@@ -1,8 +1,3 @@
-# Meta:
-# "==>" are the big boy settings
-# "-->" are the smol boy settings
-# "## <category> // <action> // <keybinding> ## <reserved for user notes>" are for remontoire (https://github.com/regolith-linux/remontoire)
-
 # ==> General Settings
 
 ## Main // Modkey // <Super> ##
@@ -67,12 +62,13 @@ bindsym $mod+Shift+w exec firefox
 ## General // Thunar (#3) // <Super> + Shift + f ##
 bindsym $mod+Shift+f exec thunar;workspace 3;focus
 
-# For FLameshot
+# For Flameshot
 # Open the gui
 bindsym Print exec flameshot gui
+bindsym Shift+Print exec flameshot gui --accept-on-select --clipboard
 
 # --> dmenu stuff with rofi
-bindsym $mod+shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+bindsym $mod+shift+g exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
 bindsym $mod+d exec rofi -show drun -sidebar-mode -font 'Ubuntu Nerd Font Mono Complete 10'
 bindsym $mod+shift+a exec ~/bin/i3-keybinds 
 
