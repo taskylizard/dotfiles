@@ -51,22 +51,7 @@ return {
       -- "pyright"
     },
 
-    config = {
-      tsserver = {
-        settings = {
-          typescript = {
-            importModuleSpecifier = "non-relative",
-          },
-        },
-      },
-      tailwindcss = {
-        settings = {
-          rootdir = {
-            "tailwind.config.cjs",
-          },
-        },
-      },
-    },
+    config = {},
   },
 
   -- Configure require("lazy").setup() options

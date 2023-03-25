@@ -14,7 +14,7 @@ font pango:DejaVu Sans Mono 8
 exec --no-startup-id copyq
 exec --no-startup-id flameshot
 exec --no-startup-id picom --config ~/.config/picom/picom.conf --vsync --experimental-backends  
-exec --no-startup-id hsetroot -fill ~/Documents/wallhaven-13mk9v.jpg
+exec --no-startup-id hsetroot -fill ~/Pictures/wallpapers/vxf0hGW.png
 exec --no-startup-id xsettingsd &
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst

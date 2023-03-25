@@ -4,11 +4,8 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 local lspconfig = require "lspconfig"
 local custom_handler = function(err, method, result, client_id, bufnr, config)
   if err then
-    -- handle the error
   elseif result == nil or vim.tbl_isempty(result) then
-    -- handle no results
   else
-    -- handle results
   end
 end
 
@@ -24,14 +21,12 @@ return {
   handlers = {
     ["textDocument/documentHighlight"] = custom_handler,
   },
-  -- add conditional statement to check if server supports method
   on_attach = function(client, bufnr)
     if client.resolved_capabilities.document_highlight then
-      -- enable highlight on cursor hold
       vim.api.nvim_command "autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()"
       vim.api.nvim_command "autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()"
-      -- enable highlight on cursor move
       vim.api.nvim_command "autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()"
+    else
     end
   end,
   -- on_attach = function(client, bufnr) client.server_capabilities.documentHighlightProvider = false end,

@@ -92,13 +92,21 @@ return {
     },
   },
   { "npxbr/glow.nvim", ft = { "markdown" } },
-  { "ObserverOfTime/nvimcord", event = "VeryLazy", opts = {
-    autostart = true,
-  } },
+  { "andweeb/presence.nvim", event = "VeryLazy" },
   { "folke/todo-comments.nvim", event = "BufRead" },
-  { "ray-x/lsp_signature.nvim", event = "BufRead" },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    opts = {
+      bind = true,
+      handler_opts = {
+        border = "rounded",
+      },
+    },
+  },
   { "nathom/easy-replace.nvim" },
   { "kvrohit/substrata.nvim" },
+  {'olivercederborg/poimandres.nvim', event = "VeryLazy"},
   {
     "marilari88/twoslash-queries.nvim",
     opts = {
