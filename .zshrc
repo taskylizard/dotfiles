@@ -78,6 +78,9 @@ alias l='ls -a --color=auto'
 alias ll='ls -la'
 alias n='nvim'
 alias c='clear'
+alias edit="fzf --ansi --preview='bat {}' --bind shift-up:preview-page-up,shift-down:preview-page-down --print0 | xargs -0 -o nvim"
+alias pf="fzf --ansi --preview='cat {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+alias gitf="git log --oneline --decorate --color | fzf --ansi --preview 'git show $(echo {} | cut -d" " -f1)'"
 
 autoload -U bashcompinit
 bashcompinit
