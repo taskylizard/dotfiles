@@ -1,0 +1,44 @@
+gui:
+  showIcons: true
+
+customCommands:
+  - key: "<c-P>"
+    description: "Push to a specific remote repository"
+    context: "global"
+    loadingText: "Pushing ..."
+    prompts:
+      - type: "menuFromCommand"
+        title: "Which remote repository to push to?"
+        command: bash -c "git remote --verbose | grep '/.* (push)'"
+        filter: '(?P<remote>.*)\s+(?P<url>.*) \(push\)'
+        valueFormat: "{{ .remote }}"
+        labelFormat: "{{ .remote | bold | cyan }} {{ .url }}"
+      - type: "menu"
+        title: "How to push?"
+        options:
+          - value: "push"
+          - value: "push --force-with-lease"
+          - value: "push --force"
+  - key: "<c-p>"
+    context: "global"
+    loadingText: "pushing"
+    prompts:
+      - type: "input"
+        title: "which branch do you want to push to?"
+    command: "git push origin {{index .PromptResponses 0}}"
+  - key: "P"
+    command: "git push {{.SelectedRemote.RefName}} {{.SelectedLocalCommit.Sha}}:{{.SelectedLocalBranch.RefName}}"
+    context: "commits"
+    loadingText: "Pushing commit..."
+    description: "Push a specific commit (and any preceding)"
+    stream: yes
+  - key: "<c-r>"
+    command: "gh pr create --fill --web"
+    context: "global"
+    loadingText: "Creating pull request on GitHub"
+
+os:
+  editCommand: "nvim"
+
+git:
+  overrideGpg: true
