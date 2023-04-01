@@ -1,0 +1,13 @@
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+
+[diff]
+	algorithm = patience
+	colorMoved = default
+
+[fetch]
+	prune = true
+
+[pull]
+	rebase = true
+	ff = only

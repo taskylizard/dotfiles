@@ -91,3 +91,4 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 alias cat='batcat'
+export BAT_THEME="TokyoNight"

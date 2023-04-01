@@ -38,6 +38,6 @@ return {
   },
   on_new_config = function(new_config) end,
   root_dir = function(fname)
-    return require("lspconfig.util").root_pattern("unocss.config.js", "unocss.config.ts")(fname)
+    return require("lspconfig.util").root_pattern("unocss.config.js", "unocss.config.ts", "astro.config.ts")(fname)
   end,
 }
