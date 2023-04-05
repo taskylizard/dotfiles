@@ -106,7 +106,7 @@ return {
   },
   { "nathom/easy-replace.nvim" },
   { "kvrohit/substrata.nvim" },
-  {'olivercederborg/poimandres.nvim', event = "VeryLazy"},
+  { "Selmer443/poimandres.nvim", event = "VeryLazy" },
   {
     "marilari88/twoslash-queries.nvim",
     opts = {
