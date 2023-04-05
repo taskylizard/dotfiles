@@ -76,21 +76,29 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- Alpha
     local function alpha_on_bye(cmd)
       local bufs = vim.fn.getbufinfo { buflisted = true }
       vim.cmd(cmd)
       if require("astronvim.utils").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
     end
     vim.keymap.del("n", "<leader>c")
+    -- Close Buffer
     if require("astronvim.utils").is_available "bufdelete.nvim" then
       vim.keymap.set("n", "<leader>c", function() alpha_on_bye "Bdelete!" end, { desc = "Close buffer" })
     else
       vim.keymap.set("n", "<leader>c", function() alpha_on_bye "bdelete!" end, { desc = "Close buffer" })
     end
+    -- Astro
     vim.filetype.add {
       extension = {
         astro = "astro",
       },
     }
+    -- TypeScript
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "typescript",
+      callback = function() vim.opt.matchpairs:append "<:>" end,
+    })
   end,
 }

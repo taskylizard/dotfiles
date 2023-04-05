@@ -1,3 +1,5 @@
+-- I did not really like this plugin later on...
+
 return {
   -- {
   --   "echasnovski/mini.animate",

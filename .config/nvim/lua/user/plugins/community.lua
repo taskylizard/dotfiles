@@ -1,6 +1,7 @@
 return {
   { "AstroNvim/astrocommunity" },
   { import = "astrocommunity.color.ccc-nvim" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
   { import = "astrocommunity.code-runner.overseer-nvim" },

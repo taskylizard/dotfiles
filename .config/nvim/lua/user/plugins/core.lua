@@ -8,7 +8,9 @@ return {
       return opts
     end,
   },
+  -- I don't need the debugger enabled all times, sorry
   { "mfussenegger/nvim-dap", enabled = false },
+  -- Makes the seperators suitable since they were unanimously large on my installed set of Fira Code Nerd Fonts
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
