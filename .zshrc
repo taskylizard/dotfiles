@@ -91,4 +91,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 alias cat='batcat'
+alias bat='batcat'
 export BAT_THEME="TokyoNight"
+
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

@@ -1,0 +1,7 @@
+nodejs
+xh
+batcat
+zsh
+fzf
+unclutter
+make
