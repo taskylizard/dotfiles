@@ -1,5 +1,23 @@
 gui:
   showIcons: true
+  branchColors:
+    "trunk": "#7AA2F7"
+  authorColors:
+    "taskylizard": "#bb9af7"
+  theme:
+    activeBorderColor:
+      - "#9ECE6A"
+      - bold
+    inactiveBorderColor:
+      - "#C0CAF5"
+    optionsTextColor:
+      - "#535D84"
+    defaultFgColor:
+      - "#B1BAE6"
+    selectedLineBgColor:
+      - default
+    selectedRangeBgColor:
+      - default
 
 customCommands:
   - key: "<c-P>"
@@ -42,3 +60,7 @@ os:
 
 git:
   overrideGpg: true
+  commitPrefixes:
+    fidelity: # This is repository folder name
+      pattern: "^\\w+\\/(\\w+-\\w+).*"
+      replace: "[$1] "
