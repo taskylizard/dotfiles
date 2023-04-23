@@ -6,6 +6,7 @@ return {
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },
@@ -14,6 +15,18 @@ return {
   { import = "astrocommunity.git.neogit" },
   {
     "overseer.nvim",
+    opts = {
+      -- Template modules to load
+      templates = { "builtin" },
+      task_list = {
+        bindings = {
+          ["{"] = "DecreaseWidth",
+          ["}"] = "IncreaseWidth",
+          ["["] = "PrevTask",
+          ["]"] = "NextTask",
+        },
+      },
+    },
     keys = {
       { "<leader>to", desc = "Task Runner", mode = { "n" } },
       { "<leader>toR", "<cmd>OverseerRunCmd<cr>", desc = "Run Command" },

@@ -19,14 +19,44 @@ return {
     "folke/tokyonight.nvim",
     opts = {
       sidebars = { "qf", "vista_kind", "terminal", "neotree" },
+      on_highlights = function(hl, c)
+        local prompt = "#2d3149"
+        hl.TelescopeNormal = {
+          bg = c.bg_dark,
+          fg = c.fg_dark,
+        }
+        hl.TelescopeBorder = {
+          bg = c.bg_dark,
+          fg = c.bg_dark,
+        }
+        hl.TelescopePromptNormal = {
+          bg = prompt,
+        }
+        hl.TelescopePromptBorder = {
+          bg = prompt,
+          fg = prompt,
+        }
+        hl.TelescopePromptTitle = {
+          bg = prompt,
+          fg = prompt,
+        }
+        hl.TelescopePreviewTitle = {
+          bg = c.bg_dark,
+          fg = c.bg_dark,
+        }
+        hl.TelescopeResultsTitle = {
+          bg = c.bg_dark,
+          fg = c.bg_dark,
+        }
+      end,
     },
   },
   {
     "nacro90/numb.nvim",
     event = "BufRead",
     opts = {
-      show_numbers = true, -- Enable 'number' for the window while peeking
-      show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+      show_numbers = true,
+      show_cursorline = true,
     },
   },
   {
@@ -45,9 +75,9 @@ return {
   {
     "marilari88/twoslash-queries.nvim",
     opts = {
-      multi_line = true, -- to print types in multi line mode
-      is_enabled = false, -- to keep disabled at startup and enable it on request with the EnableTwoslashQueries
-      highlight = "Type", -- to set up a highlight group for the virtual text
+      multi_line = true,
+      is_enabled = false,
+      highlight = "Type",
     },
     keys = {
       { "<C-k>", "<cmd>InspectTwoslashQueries<CR>", desc = "InspectTwoslashQueries" },

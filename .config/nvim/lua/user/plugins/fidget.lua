@@ -1,5 +1,6 @@
 return {
   "j-hui/fidget.nvim",
+  enabled = false, -- conflicts with astronvim so disabled for now...
   event = "BufReadPre",
   opts = {
     fmt = {

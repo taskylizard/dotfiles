@@ -1,5 +1,4 @@
 local events = require "neo-tree.events"
----@param args FileMovedArgs
 local function on_file_remove(args)
   local ts_clients = vim.lsp.get_active_clients { name = "tsserver" }
   for _, ts_client in ipairs(ts_clients) do
