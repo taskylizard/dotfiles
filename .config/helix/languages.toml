@@ -1,4 +1,6 @@
-[[language]]
+use-grammars = { only = ["go", "typescript", "toml", "tsx", "html", "scss", "json"] }
+
+[[languages]]
 name = "go"
 auto-format = true
 formatter = { command = "goimports" }
@@ -11,25 +13,47 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 biome = { command = "biome", args = ["lsp-proxy"] }
 
 [[language]]
+name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] } ]
+formatter = { command = "prettierd", args = [".json"] }
+
+[[language]]
+name = "html"
+language-servers = [
+  {name = "vscode-html-language-server", except-features = ["format"]}
+]
+formatter = { command = "prettierd", args = [".html"] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [
+ {name = "vscode-css-language-server", except-features = ["format"]}
+]
+formatter = { command = "prettierd", args = [".css"] }
+auto-format = true
+
+[[language]]
 name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
+
+formatter = { command = "prettierd", args = [".js"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
+formatter = { command = "prettierd", args = [".ts"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
+formatter = { command = "prettierd", args = [".tsx"] }
 
 [[language]]
 name = "jsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-
-[[language]]
-name = "json"
-language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
+formatter = { command = "prettierd", args = [".jsx"] }
