@@ -32,7 +32,6 @@ return {
 	{ import = "astrocommunity.project.nvim-spectre" },
 	{ import = "astrocommunity.terminal-integration.flatten-nvim" },
 	{ import = "astrocommunity.syntax.hlargs-nvim" },
-	{ import = "astrocommunity.diagnostics.lsp_lines-nvim" },
 	{ import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
 	-- import/override with your plugins folder
 	{ import = "plugins" },
