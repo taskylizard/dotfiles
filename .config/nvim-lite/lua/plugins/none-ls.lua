@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",
   opts = function(_, config)
@@ -8,9 +9,9 @@ return {
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
-      -- Set a formatter
-      null_ls.builtins.formatting.stylua,
+   null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.prettierd,
+
     }
     return config -- return final config table
   end,
